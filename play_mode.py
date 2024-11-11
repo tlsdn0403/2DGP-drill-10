@@ -4,7 +4,7 @@ import game_framework
 import game_world
 from grass import Grass
 from boy import Boy
-
+from bird import Bird
 # boy = None
 
 def handle_events():
@@ -20,12 +20,16 @@ def handle_events():
 def init():
     global grass
     global boy
+    global bird
 
     grass = Grass()
     game_world.add_object(grass, 0)
 
     boy = Boy()
     game_world.add_object(boy, 1)
+
+    bird=Bird()
+    game_world.add_object(bird,1)
 
 
 def finish():
@@ -35,7 +39,7 @@ def finish():
 
 def update():
     ##성능이 안좋은 pc흉내 
-    delay(0.5)
+    #delay(0.5)
     game_world.update()
 
 def draw():
